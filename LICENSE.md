@@ -1,3 +1,3 @@
-#BAIO Licence
+#BAIO License
 
 BAIO is released unde GNU General Public License.
