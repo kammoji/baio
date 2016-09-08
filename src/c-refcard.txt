@@ -1,0 +1,632 @@
+C Reference Card (ANSI)
+Program Structure/Functions
+type fnc(type 1 ,. . . )
+type name
+main() {
+declarations
+statements
+}
+type fnc(arg 1 ,. . . ) {
+declarations
+statements
+return value;
+}
+/* */
+main(int argc, char *argv[])
+exit(arg )
+
+function declarations
+external variable declarations
+main routine
+local variable declarations
+function definition
+local variable declarations
+
+Constants
+
+Flow of Control
+
+long (suffix)
+float (suffix)
+exponential form
+octal (prefix zero)
+hexadecimal (prefix zero-ex)
+character constant (char, octal, hex)
+newline, cr, tab, backspace
+special characters
+string constant (ends with '\0')
+
+L or l
+F or f
+e
+0
+0x or 0X
+'a', '\ooo', '\xhh'
+\n, \r, \t, \b
+\\, \?, \', \"
+"abc. . . de"
+
+Pointers, Arrays & Structures
+
+include library file
+#include <filename>
+include user file
+#include "filename"
+replacement text
+#define name text
+replacement macro
+#define name(var ) text
+Example. #define max(A,B) ((A)>(B) ? (A) : (B))
+undefine
+#undef name
+quoted string in replace
+#
+concatenate args and rescan
+##
+conditional execution
+#if, #else, #elif, #endif
+is name defined, not defined?
+#ifdef, #ifndef
+name defined?
+defined(name )
+line continuation char
+\
+
+declare pointer to type
+type *name
+declare function returning pointer to type type *f()
+declare pointer to function returning type type (*pf)()
+generic pointer type
+void *
+null pointer
+NULL
+object pointed to by pointer
+*pointer
+address of object name
+&name
+array
+name[dim ]
+multi-dim array
+name[dim 1 ][dim 2 ]. . .
+Structures
+struct tag {
+structure template
+declarations
+declaration of members
+};
+create structure
+struct tag name
+member of structure from template
+name.member
+member of pointed to structure
+pointer -> member
+Example. (*p).x and p->x are the same
+single value, multiple type structure
+union
+bit field with b bits
+member : b
+
+Data Types/Declarations
+
+Operators (grouped by precedence)
+
+comments
+main with args
+terminate execution
+
+C Preprocessor
+
+character (1 byte)
+integer
+float (single precision)
+float (double precision)
+short (16 bit integer)
+long (32 bit integer)
+positive and negative
+only positive
+pointer to int, float,. . .
+enumeration constant
+constant (unchanging) value
+declare external variable
+register variable
+local to source file
+no value
+structure
+create name by data type
+size of an object (type is size_t)
+size of a data type (type is size_t)
+
+char
+int
+float
+double
+short
+long
+signed
+unsigned
+*int, *float,. . .
+enum
+const
+extern
+register
+static
+void
+struct
+typedef typename
+sizeof object
+sizeof(type name)
+
+Initialization
+initialize variable
+initialize array
+initialize char string
+
+type name=value
+type name[]={value 1 ,. . . }
+char name[]="string "
+
+structure member operator
+structure pointer
+increment, decrement
+plus, minus, logical not, bitwise not
+indirection via pointer, address of object
+cast expression to type
+size of an object
+
+name.member
+pointer ->member
+++, -+, -, !, ~
+*pointer , &name
+(type) expr
+sizeof
+
+multiply, divide, modulus (remainder)
+
+*, /, %
+
+add, subtract
+
++, -
+
+left, right shift [bit ops]
+comparisons
+comparisons
+bitwise and
+bitwise exclusive or
+bitwise or (incl)
+
+<<, >>
+>, >=, <, <=
+==, !=
+&
+^
+|
+
+logical and
+&&
+logical or
+||
+conditional expression
+expr 1 ? expr 2 : expr 3
+assignment operators
++=, -=, *=, . . .
+expression evaluation separator
+,
+Unary operators, conditional expression and assignment operators group right to left; all others group left to right.
+
+statement terminator
+;
+block delimeters
+{ }
+exit from switch, while, do, for
+break
+next iteration of while, do, for
+continue
+go to
+goto label
+label
+label :
+return value from function
+return expr
+Flow Constructions
+if statement
+if (expr ) statement
+else if (expr ) statement
+else statement
+while statement
+while (expr )
+statement
+for statement
+for (expr 1 ; expr 2 ; expr 3 )
+statement
+do statement
+do
+statement
+while(expr );
+switch statement
+switch (expr ) {
+case const 1 : statement 1 break;
+case const 2 : statement 2 break;
+default: statement
+}
+
+ANSI Standard Libraries
+<assert.h>
+<locale.h>
+<stddef.h>
+
+<ctype.h>
+<math.h>
+<stdio.h>
+
+<errno.h>
+<setjmp.h>
+<stdlib.h>
+
+2
+
+<limits.h>
+<stdarg.h>
+<time.h>
+
+Character Class Tests <ctype.h>
+alphanumeric?
+alphabetic?
+control character?
+decimal digit?
+printing character (not incl space)?
+lower case letter?
+printing character (incl space)?
+printing char except space, letter, digit?
+space, formfeed, newline, cr, tab, vtab?
+upper case letter?
+hexadecimal digit?
+convert to lower case?
+convert to upper case?
+
+isalnum(c)
+isalpha(c)
+iscntrl(c)
+isdigit(c)
+isgraph(c)
+islower(c)
+isprint(c)
+ispunct(c)
+isspace(c)
+isupper(c)
+isxdigit(c)
+tolower(c)
+toupper(c)
+
+String Operations <string.h>
+s,t are strings, cs,ct are constant strings
+length of s
+strlen(s)
+copy ct to s
+strcpy(s,ct)
+up to n chars
+strncpy(s,ct,n)
+concatenate ct after s
+strcat(s,ct)
+up to n chars
+strncat(s,ct,n)
+compare cs to ct
+strcmp(cs,ct)
+only first n chars
+strncmp(cs,ct,n)
+pointer to first c in cs
+strchr(cs,c)
+pointer to last c in cs
+strrchr(cs,c)
+copy n chars from ct to s
+memcpy(s,ct,n)
+copy n chars from ct to s (may overlap) memmove(s,ct,n)
+compare n chars of cs with ct
+memcmp(cs,ct,n)
+pointer to first c in first n chars of cs
+memchr(cs,c,n)
+put c into first n chars of cs
+memset(s,c,n)
+
+c 1999 Joseph H. Silverman Permissions on back. v1.3
+
+
+1
+
+<float.h>
+<signal.h>
+<string.h>
+
+3
+
+C Reference Card (ANSI)
+Input/Output <stdio.h>
+Standard I/O
+standard input stream
+stdin
+standard output stream
+stdout
+standard error stream
+stderr
+end of file
+EOF
+get a character
+getchar()
+print a character
+putchar(chr )
+print formatted data
+printf("format ",arg 1 ,. . . )
+print to string s
+sprintf(s,"format ",arg 1 ,. . . )
+read formatted data
+scanf("format ",&name 1 ,. . . )
+read from string s
+sscanf(s,"format ",&name 1 ,. . . )
+read line to string s (< max chars)
+gets(s,max)
+print string s
+puts(s)
+File I/O
+declare file pointer
+FILE *fp
+pointer to named file
+fopen("name ","mode ")
+modes: r (read), w (write), a (append)
+get a character
+getc(fp)
+write a character
+putc(chr ,fp)
+write to file
+fprintf(fp,"format ",arg 1 ,. . . )
+read from file
+fscanf(fp,"format ",arg 1 ,. . . )
+close file
+fclose(fp)
+non-zero if error
+ferror(fp)
+non-zero if EOF
+feof(fp)
+read line to string s (< max chars)
+fgets(s,max,fp )
+write string s
+fputs(s,fp )
+Codes for Formatted I/O: "%-+ 0w.pmc"
+- left justify
++ print with sign
+space print space if no sign
+0 pad with leading zeros
+w min field width
+p precision
+m conversion character:
+h short,
+l long,
+L long double
+c
+conversion character:
+d,i integer
+u unsigned
+c single char
+s char string
+f double
+e,E exponential
+o octal
+x,X hexadecimal
+p pointer
+n number of chars written
+g,G same as f or e,E depending on exponent
+
+Variable Argument Lists <stdarg.h>
+declaration of pointer to arguments
+va_list name;
+initialization of argument pointer
+va_start(name ,lastarg )
+lastarg is last named parameter of the function
+access next unamed arg, update pointer va_arg(name ,type)
+call before exiting function
+va_end(name )
+
+4
+
+Standard Utility Functions <stdlib.h>
+
+Integer Type Limits <limits.h>
+
+absolute value of int n
+abs(n)
+absolute value of long n
+labs(n)
+quotient and remainder of ints n,d
+div(n,d)
+retursn structure with div_t.quot and div_t.rem
+quotient and remainder of longs n,d
+ldiv(n,d)
+returns structure with ldiv_t.quot and ldiv_t.rem
+pseudo-random integer [0,RAND_MAX]
+rand()
+set random seed to n
+srand(n)
+terminate program execution
+exit(status)
+pass string s to system for execution
+system(s)
+Conversions
+convert string s to double
+atof(s)
+convert string s to integer
+atoi(s)
+convert string s to long
+atol(s)
+convert prefix of s to double
+strtod(s,endp)
+convert prefix of s (base b) to long
+strtol(s,endp,b)
+same, but unsigned long
+strtoul(s,endp,b)
+Storage Allocation
+allocate storage
+malloc(size), calloc(nobj,size)
+change size of object
+realloc(pts,size)
+deallocate space
+free(ptr)
+Array Functions
+search array for key
+bsearch(key,array,n,size,cmp())
+sort array ascending order
+qsort(array,n,size,cmp())
+
+The numbers given in parentheses are typical values for the
+constants on a 32-bit Unix system.
+CHAR_BIT bits in char
+(8)
+CHAR_MAX max value of char
+(127 or 255)
+CHAR_MIN min value of char
+(−128 or 0)
+INT_MAX max value of int
+(+32,767)
+INT_MIN min value of int
+(−32,768)
+LONG_MAX max value of long
+(+2,147,483,647)
+LONG_MIN min value of long
+(−2,147,483,648)
+SCHAR_MAX max value of signed char
+(+127)
+SCHAR_MIN min value of signed char
+(−128)
+SHRT_MAX max value of short
+(+32,767)
+SHRT_MIN min value of short
+(−32,768)
+UCHAR_MAX max value of unsigned char
+(255)
+UINT_MAX max value of unsigned int
+(65,535)
+ULONG_MAX max value of unsigned long
+(4,294,967,295)
+USHRT_MAX max value of unsigned short
+(65,536)
+
+Time and Date Functions <time.h>
+processor time used by program
+clock()
+Example. clock()/CLOCKS_PER_SEC is time in seconds
+current calendar time
+time()
+time2 -time1 in seconds (double)
+difftime(time2 ,time1 )
+arithmetic types representing times
+clock_t,time_t
+structure type for calendar time comps
+tm
+tm_sec
+seconds after minute
+tm_min
+minutes after hour
+tm_hour
+hours since midnight
+tm_mday
+day of month
+tm_mon
+months since January
+tm_year
+years since 1900
+tm_wday
+days since Sunday
+tm_yday
+days since January 1
+tm_isdst
+Daylight Savings Time flag
+convert local time to calendar time
+mktime(tp)
+convert time in tp to string
+asctime(tp)
+convert calendar time in tp to local time ctime(tp)
+convert calendar time to GMT
+gmtime(tp)
+convert calendar time to local time
+localtime(tp)
+format date and time info
+strftime(s,smax,"format ",tp)
+tp is a pointer to a structure of type tm
+
+Float Type Limits <float.h>
+FLT_RADIX
+FLT_ROUNDS
+FLT_DIG
+FLT_EPSILON
+FLT_MANT_DIG
+FLT_MAX
+FLT_MAX_EXP
+FLT_MIN
+FLT_MIN_EXP
+DBL_DIG
+DBL_EPSILON
+DBL_MANT_DIG
+DBL_MAX
+DBL_MAX_EXP
+DBL_MIN
+DBL_MIN_EXP
+
+radix of exponent rep
+floating point rounding mode
+decimal digits of precision
+smallest x so 1.0 + x 6= 1.0
+number of digits in mantissa
+maximum floating point number
+maximum exponent
+minimum floating point number
+minimum exponent
+decimal digits of precision
+smallest x so 1.0 + x 6= 1.0
+number of digits in mantissa
+max double floating point number
+maximum exponent
+min double floating point number
+minimum exponent
+
+(2)
+(6)
+(10−5 )
+(1037 )
+(10−37 )
+(10)
+(10−9 )
+(1037 )
+(10−37 )
+
+Mathematical Functions <math.h>
+Arguments and returned values are double
+trig functions
+sin(x), cos(x), tan(x)
+inverse trig functions
+asin(x), acos(x), atan(x)
+arctan(y/x)
+atan2(y,x)
+hyperbolic trig functions
+sinh(x), cosh(x), tanh(x)
+exponentials & logs
+exp(x), log(x), log10(x)
+exponentials & logs (2 power)
+ldexp(x,n), frexp(x,*e)
+division & remainder
+modf(x,*ip), fmod(x,y)
+powers
+pow(x,y), sqrt(x)
+rounding
+ceil(x), floor(x), fabs(x)
+
+Send comments and corrections to J.H. Silverman, Math. Dept., Brown
+Univ., Providence, RI 02912 USA. hjhs@math.brown.edui
+
+5
+
+6
+
+c 1999 Joseph H. Silverman
+May 1999 v1.3. Copyright 
+Permission is granted to make and distribute copies of this card provided the copyright notice and this permission notice are preserved on
+all copies.
+
+
