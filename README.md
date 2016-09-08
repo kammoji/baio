@@ -6,6 +6,10 @@ Bioinformatics Artificial Intelligence Order
 
 The Bioinformatics Artificial Intelligence Order is a hive of AI's specifically designed for solving bioinformatics problems. When you download and run your instance of BAIO, you can either train it yourself or let it join the other BAIOs around and learn from them.
 
+## System requirements
+
+Absolutely none except for your favorite C compiler.
+
 ## Installation
 
 1. Clone BAIO from github using "git clone" OR download the .zip and unzip to desired folder.
@@ -14,9 +18,23 @@ The Bioinformatics Artificial Intelligence Order is a hive of AI's specifically 
 
 3. make
 
-## Contact & support
+## Setup
 
-All questions to Juhana Kammonen <juhana@konekettu.fi>
+1. Train your own BAIO:
+
+TBA...
+
+2. Let your BAIO join the hive:
+
+TBA...
+
+3. Both 1 and 2:
+
+TBA...
+
+## Contact & Support
+
+All questions to Juhana Kammonen at: <juhana@konekettu.fi>
 
 ## How to cite?
 
