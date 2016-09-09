@@ -1,2 +1,7 @@
+SOURCE=./src/
 
-gcc -c src/main.c -o bin/main
+all: baio
+	
+baio: $(SOURCE)main.c $(SOURCE)base.c
+	gcc -o baio $(SOURCE)main.c $(SOURCE)base.c
+	
