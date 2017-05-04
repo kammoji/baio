@@ -7,7 +7,8 @@
 //BAIO BASE CODE FUNCTION:
 int base(char *fmt, ...){
 
-	printf("All good.\n");
+	printf("[INFO] All good.\n");
+        printf("[INFO] Ready for startup checks...\n");
 	return(EXIT_SUCCESS);
 
 }

@@ -8,6 +8,8 @@
         <in>baio.c</in>
         <in>base.c</in>
         <in>base.h</in>
+        <in>init.c</in>
+        <in>init.h</in>
       </df>
     </df>
   </logicalFolder>

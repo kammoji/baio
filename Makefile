@@ -3,9 +3,9 @@ SOURCE=./src/
 
 all: baio
 	
-baio: $(SOURCE)main.c $(SOURCE)base.c
-	mkdir $(BIN)
-	gcc -o $(BIN)baio $(SOURCE)baio.c $(SOURCE)base.c
+baio: $(SOURCE)baio.c $(SOURCE)base.c $(SOURCE)init.c
+	mkdir -p $(BIN)
+	gcc -o $(BIN)baio $(SOURCE)baio.c $(SOURCE)base.c $(SOURCE)init.c
 
 clean: $(BIN)
 	rm -rf $(BIN)
