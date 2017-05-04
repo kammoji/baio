@@ -1,0 +1,2 @@
+mkdir ./bin/
+gcc -o ./bin/baio ./src/main.c ./src/base.c
